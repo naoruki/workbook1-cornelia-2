@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+<!-- showing all the menu items -->
+{% block content %} 
+ <div class="row">
+	{% for items in menu %} 
+		<div class="col col-lg-4 col-md-12 ">
+			<div class="card" style="width: 18rem;">
+				<img src="{{ items.image_url }}" class="card-img-top" alt="{{ items.product_name }}"/> 
+				<div class="card-body">
+					<p class="card-text">{{items.product_name}}</p>
+					<p class="card-text">${{items.price|floatformat:2}}</p>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+{% endblock %}
+
+
